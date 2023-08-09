@@ -1,3 +1,3 @@
-# Public-00 public side data
+# Public-00 
 
-In development stage 
+In development stage - public side data
