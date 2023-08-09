@@ -1,5 +1,3 @@
-# Public-00 
-This is public side data
-
+# Public-00 public side data
 
 In development stage 
