@@ -1,0 +1,19 @@
+
+[
+	{
+		"_comment1": "Main will call out for these modules during run time",
+		"module" : "sandbox_detect"
+	},
+	{
+		"module" : "@@"
+	},
+	{
+		"module" : "@@"
+	},
+	{
+		"module" : "@@"
+	},
+	{
+		"module" : "@@"
+	}
+]
