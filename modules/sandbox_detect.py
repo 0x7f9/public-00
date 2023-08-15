@@ -1,6 +1,3 @@
-'''
-This is used to detect if the program is running under a sandbox.
-'''
 from ctypes import byref, c_uint, c_ulong, sizeof, Structure, windll
 import random
 import sys
@@ -21,7 +18,7 @@ def get_last_input():
     run_time = windll.kernel32.GetTickCount()
     elapsed = run_time - struct_lastinputinfo.dwTime
 
-    print(f"[@] It's been {elapsed} milliseconds since the last event.")
+    print(f"[*] It's been {elapsed} milliseconds since the last event.")
     return elapsed
 
 class Detector:
@@ -44,11 +41,11 @@ class Detector:
     def detect(self):
         previous_timestamp = None
         first_double_click = None
-        double_click_threshold = 0.5  # Allow threshold range of time between clicks
+        double_click_threshold = 0.5  # Increased threshold to 0.5 seconds
 
-        max_double_clicks = 15  # Max allowed double clicks
-        max_keystrokes = random.randint(10, 50)  # Keystrokes range
-        max_mouse_clicks = random.randint(5, 40)  # Mouse clicks range
+        max_double_clicks = 15  # Increased to 15 double clicks
+        max_keystrokes = random.randint(10, 50)  # Increased keystrokes range
+        max_mouse_clicks = random.randint(5, 40)  # Increased mouse clicks range
 
        # the amount of time before we judge a user has gone afk
 #        max_input_threshold = 30  # Increased to 30 seconds
@@ -72,8 +69,8 @@ class Detector:
                     else:
                         if self.double_clicks >= max_double_clicks:
                             if (keypress_time - first_double_click) <= (max_double_clicks*double_click_threshold):
-                                print("[@] User is spoofing mouse clicks")
-                                print("[@] Exiting...")
+                                print('User is spoofing mouse clicks')
+                                print('This is a virtual machine.')
                                 sys.exit()
 
                 if (self.keystrokes >= max_keystrokes and
